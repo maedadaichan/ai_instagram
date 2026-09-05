@@ -48,3 +48,13 @@ python post_to_instagram.py --image-url "https://example.com/photo.jpg" --captio
 ## 4. キャプション作成のサポート
 
 投稿内容(テーマ・トーン・ハッシュタグの方向性など)を伝えていただければ、キャプション文の作成・添削をこの場でお手伝いします。
+
+## 5. 投稿キュー(自動投稿)
+
+`queue/posts.json` に投稿予定(日付・画像パス・キャプション)を並べておくと、`post_next.py` が先頭の未投稿(`posted: false`)エントリを1件だけ投稿します。
+
+```bash
+python post_next.py
+```
+
+投稿に成功すると、該当エントリが `posted: true` に更新されます(このファイルの変更はcommit・pushしてください)。毎日決まった時間に自動実行するクラウドルーチンから呼び出す想定です。
