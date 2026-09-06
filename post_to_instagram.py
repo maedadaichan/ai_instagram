@@ -6,6 +6,13 @@ Instagram Graph API 投稿スクリプト
 - Meta for Developersでアプリを作成し、長期アクセストークンとIGビジネスアカウントIDを取得していること
 - 画像は公開アクセス可能なURLである必要がある(ローカルファイルは直接アップロード不可)
 
+認証方式:
+アクセストークンは Authorization: Bearer ヘッダーで送信する(リクエストボディには含めない)。
+- ローカル実行時: .env の IG_ACCESS_TOKEN からヘッダーを組み立てる
+- クラウドルーチン実行時: 環境の「API認証情報」機能が graph.instagram.com 宛のリクエストに
+  自動でこのヘッダーを付与するため、IG_ACCESS_TOKEN 自体をセッションに渡す必要がない
+  (トークン値がClaudeのセッションに露出しない)
+
 使い方:
     python post_to_instagram.py --image-url "https://example.com/photo.jpg" --caption "キャプション文"
 """
@@ -25,6 +32,9 @@ IG_USER_ID = os.getenv("IG_USER_ID")
 API_VERSION = os.getenv("GRAPH_API_VERSION", "v21.0")
 BASE_URL = f"https://graph.instagram.com/{API_VERSION}"
 
+# ローカル実行時のみ付与(クラウドルーチンでは環境の認証情報プロキシがヘッダーを注入する)
+AUTH_HEADERS = {"Authorization": f"Bearer {ACCESS_TOKEN}"} if ACCESS_TOKEN else {}
+
 
 def create_media_container(image_url: str, caption: str) -> str:
     """画像投稿用のメディアコンテナを作成し、コンテナIDを返す"""
@@ -33,8 +43,8 @@ def create_media_container(image_url: str, caption: str) -> str:
         data={
             "image_url": image_url,
             "caption": caption,
-            "access_token": ACCESS_TOKEN,
         },
+        headers=AUTH_HEADERS,
         timeout=30,
     )
     resp.raise_for_status()
@@ -47,7 +57,8 @@ def wait_until_ready(container_id: str, timeout_sec: int = 60) -> None:
     while time.time() < deadline:
         resp = requests.get(
             f"{BASE_URL}/{container_id}",
-            params={"fields": "status_code", "access_token": ACCESS_TOKEN},
+            params={"fields": "status_code"},
+            headers=AUTH_HEADERS,
             timeout=30,
         )
         resp.raise_for_status()
@@ -66,8 +77,8 @@ def publish_media(container_id: str) -> str:
         f"{BASE_URL}/{IG_USER_ID}/media_publish",
         data={
             "creation_id": container_id,
-            "access_token": ACCESS_TOKEN,
         },
+        headers=AUTH_HEADERS,
         timeout=30,
     )
     resp.raise_for_status()
@@ -75,9 +86,9 @@ def publish_media(container_id: str) -> str:
 
 
 def post_image(image_url: str, caption: str) -> str:
-    if not ACCESS_TOKEN or not IG_USER_ID:
+    if not IG_USER_ID:
         raise RuntimeError(
-            "IG_ACCESS_TOKEN / IG_USER_ID が設定されていません。.env を作成してください(.env.example参照)。"
+            "IG_USER_ID が設定されていません。.env を作成してください(.env.example参照)。"
         )
     container_id = create_media_container(image_url, caption)
     wait_until_ready(container_id)

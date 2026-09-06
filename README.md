@@ -18,7 +18,7 @@ Instagram Graph APIを使った投稿自動化ツールです。
 6. Graph API Explorer等で短期トークンを取得後、長期トークン(60日間有効)に交換する
 7. `https://graph.facebook.com/v21.0/me/accounts` などでFacebookページID→IGビジネスアカウントIDを調べる
 
-取得した値は、`.env.example` をコピーして `.env` を作成し記入してください。
+取得した値は、`.env.example` をコピーして `.env` を作成し記入してください(ローカル実行用)。
 
 ```bash
 cp .env.example .env
@@ -28,6 +28,17 @@ cp .env.example .env
 IG_ACCESS_TOKEN=取得した長期アクセストークン
 IG_USER_ID=InstagramビジネスアカウントID
 ```
+
+### クラウドルーチン(自動投稿)で使う場合の認証設定
+
+`post_next.py` をクラウドルーチンから毎日自動実行する場合、アクセストークンをそのままセッションの環境変数に渡すとClaudeのセッションにトークン値が見えてしまいます。そのため、[claude.ai/code](https://claude.ai/code) のクラウド環境(`ai_instagram`)の編集画面にある **「API認証情報」** 機能を使い、以下の内容でご自身のアカウントから直接登録してください(値はセッションに一切渡らず、指定ホスト宛のリクエストにのみ自動付与されます)。
+
+- 追加先: 環境 `ai_instagram`
+- 認証情報タイプ: `Bearer`
+- 許可ウェブサイト: `graph.instagram.com`
+- ヘッダー名: `Authorization` / プレフィックス: `Bearer` / 値: 長期アクセストークン
+
+`IG_USER_ID` はトークンのような機密情報ではないため、同じ環境編集画面の「環境変数」欄に `IG_USER_ID=...` として追加してください。
 
 ## 2. セットアップ
 
