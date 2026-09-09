@@ -69,3 +69,13 @@ python post_next.py
 ```
 
 投稿に成功すると、該当エントリが `posted: true` に更新されます(このファイルの変更はcommit・pushしてください)。毎日決まった時間に自動実行するクラウドルーチンから呼び出す想定です。
+
+## 6. 反応データの分析(週2〜3回)
+
+`fetch_insights.py` は投稿済み(`posted: true`)のエントリについて、いいね数・コメント数(取得できればリーチ・保存数)をInstagram Graph APIから取得しJSONで出力します。
+
+```bash
+python fetch_insights.py
+```
+
+このデータをもとに、週2〜3回のクラウドルーチン(`ai_instagram_analysis`)が `reports/` 配下に分析レポート(良かった投稿・伸びなかった投稿・次に試すべき改善案)を作成し、mainにコミットします。レポートはGitHub上、またはこの会話で「今週のレポート見せて」と聞けば確認できます。
