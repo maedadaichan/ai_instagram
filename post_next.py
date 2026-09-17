@@ -16,7 +16,7 @@ import os
 import sys
 from datetime import date, datetime, timezone
 
-from post_to_instagram import post_image
+from post_to_instagram import post_image, post_reel
 
 QUEUE_PATH = os.path.join(os.path.dirname(__file__), "queue", "posts.json")
 DEFAULT_RAW_BASE = "https://raw.githubusercontent.com/maedadaichan/ai_instagram/main"
@@ -42,11 +42,16 @@ def main() -> int:
         return 0
 
     raw_base = os.getenv("GITHUB_REPO_RAW_BASE", DEFAULT_RAW_BASE)
-    image_url = f"{raw_base}/{next_entry['image']}"
+    is_reel = "video" in next_entry
 
-    print(f"投稿します: id={next_entry['id']} date={next_entry['date']}")
+    print(f"投稿します: id={next_entry['id']} date={next_entry['date']} type={'reel' if is_reel else 'image'}")
     try:
-        media_id = post_image(image_url, next_entry["caption"])
+        if is_reel:
+            video_url = f"{raw_base}/{next_entry['video']}"
+            media_id = post_reel(video_url, next_entry["caption"])
+        else:
+            image_url = f"{raw_base}/{next_entry['image']}"
+            media_id = post_image(image_url, next_entry["caption"])
     except Exception as e:  # noqa: BLE001
         print(f"投稿に失敗しました: {e}", file=sys.stderr)
         return 1

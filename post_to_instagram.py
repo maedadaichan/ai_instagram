@@ -15,6 +15,7 @@ Instagram Graph API 投稿スクリプト
 
 使い方:
     python post_to_instagram.py --image-url "https://example.com/photo.jpg" --caption "キャプション文"
+    python post_to_instagram.py --video-url "https://example.com/reel.mp4" --caption "キャプション文"
 """
 
 import argparse
@@ -42,6 +43,22 @@ def create_media_container(image_url: str, caption: str) -> str:
         f"{BASE_URL}/{IG_USER_ID}/media",
         data={
             "image_url": image_url,
+            "caption": caption,
+        },
+        headers=AUTH_HEADERS,
+        timeout=30,
+    )
+    resp.raise_for_status()
+    return resp.json()["id"]
+
+
+def create_reel_container(video_url: str, caption: str) -> str:
+    """リール(動画)投稿用のメディアコンテナを作成し、コンテナIDを返す"""
+    resp = requests.post(
+        f"{BASE_URL}/{IG_USER_ID}/media",
+        data={
+            "media_type": "REELS",
+            "video_url": video_url,
             "caption": caption,
         },
         headers=AUTH_HEADERS,
@@ -96,14 +113,37 @@ def post_image(image_url: str, caption: str) -> str:
     return media_id
 
 
+def post_reel(video_url: str, caption: str) -> str:
+    """リール(動画)を投稿する。動画のエンコード処理があるため画像より待機時間を長く取る"""
+    if not IG_USER_ID:
+        raise RuntimeError(
+            "IG_USER_ID が設定されていません。.env を作成してください(.env.example参照)。"
+        )
+    container_id = create_reel_container(video_url, caption)
+    wait_until_ready(container_id, timeout_sec=180)
+    media_id = publish_media(container_id)
+    return media_id
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Instagramに画像を投稿する")
-    parser.add_argument("--image-url", required=True, help="公開アクセス可能な画像URL")
+    parser = argparse.ArgumentParser(description="Instagramに画像またはリールを投稿する")
+    parser.add_argument("--image-url", help="公開アクセス可能な画像URL(画像投稿)")
+    parser.add_argument("--video-url", help="公開アクセス可能な動画URL(リール投稿)")
     parser.add_argument("--caption", default="", help="投稿キャプション")
     args = parser.parse_args()
 
+    if not args.image_url and not args.video_url:
+        print("--image-url か --video-url のどちらかを指定してください", file=sys.stderr)
+        return 1
+    if args.image_url and args.video_url:
+        print("--image-url と --video-url は同時に指定できません", file=sys.stderr)
+        return 1
+
     try:
-        media_id = post_image(args.image_url, args.caption)
+        if args.video_url:
+            media_id = post_reel(args.video_url, args.caption)
+        else:
+            media_id = post_image(args.image_url, args.caption)
     except Exception as e:  # noqa: BLE001
         print(f"投稿に失敗しました: {e}", file=sys.stderr)
         return 1

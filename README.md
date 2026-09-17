@@ -70,6 +70,19 @@ python post_next.py
 
 投稿に成功すると、該当エントリが `posted: true` に更新されます(このファイルの変更はcommit・pushしてください)。毎日決まった時間に自動実行するクラウドルーチンから呼び出す想定です。
 
+キューの各エントリは `image`(画像投稿)か `video`(リール投稿)のどちらか一方のキーを持ちます。両方持つことはできません。
+
+## 5.5 リール(動画)の作成
+
+`make_reel.py` は、複数の静止画(スライド)を1枚ずつ表示する縦型(9:16)のスライドショー動画を作成します。ffmpeg本体のインストールは不要です(`imageio-ffmpeg` が内蔵のffmpegを使います)。
+
+```bash
+python make_reel.py --images images/slide1.png images/slide2.png images/slide3.png \
+    --output images/week2_reel.mp4 --seconds-per-slide 3
+```
+
+作成した動画をGitHubにpushし、`queue/posts.json` のエントリで `image` の代わりに `video` キー(例: `"video": "images/week2_reel.mp4"`)を使えば、`post_next.py` が自動的にリールとして投稿します。
+
 ## 6. 反応データの分析(週2〜3回)
 
 `fetch_insights.py` は投稿済み(`posted: true`)のエントリについて、いいね数・コメント数(取得できればリーチ・保存数)をInstagram Graph APIから取得しJSONで出力します。
