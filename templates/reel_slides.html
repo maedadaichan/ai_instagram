@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<style>
+  html,body{margin:0;padding:0;width:1080px;height:1920px;}
+  body{
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    background:radial-gradient(ellipse at 50% 35%,#24292e 0%,#0d0f11 75%);
+    color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+  }
+  .series{
+    position:absolute;top:150px;left:0;right:0;
+    font-weight:700;font-size:34px;letter-spacing:0.08em;color:#9aa3ab;
+  }
+  .wrap{padding:0 80px;display:flex;flex-direction:column;align-items:center;gap:56px;}
+  .big{font-weight:900;font-size:110px;line-height:1.28;}
+  .mid{font-weight:900;font-size:76px;line-height:1.45;}
+  .small{font-weight:700;font-size:44px;line-height:1.6;color:#d6dbe0;}
+  .red{color:#ff4040;}
+  .box{
+    background:#fff;color:#111;border-radius:28px;
+    padding:44px 52px;font-weight:900;font-size:58px;line-height:1.5;
+    box-shadow:0 0 0 8px #ff4040;
+  }
+  .rank{font-weight:900;font-size:80px;color:#ff4040;}
+  .ranked .mid{font-size:130px;}
+  .handle{position:absolute;bottom:170px;left:0;right:0;font-size:34px;font-weight:700;color:#9aa3ab;}
+</style>
+</head>
+<body>
+<div class="series" id="series"></div>
+<div class="wrap" id="wrap"></div>
+<div class="handle">@ai__daisuke</div>
+<script>
+const R = s => s.replace(/\[([\s\S]+?)\]/g,'<span class="red">$1</span>').replace(/\n/g,'<br>');
+const S = {
+  a:{series:"AI導入の現場で教えていること #01",slides:[
+    {big:"ChatGPTの回答が\n[仕事向け]に変わる\n1行の設定"},
+    {mid:"毎回、前置きが長い。\n結論が[どこか分からない]。"},
+    {small:"設定 →「パーソナライズ」\n→「カスタム指示」に",box:"結論から先に。\n要点は3つ以内で答えて"},
+    {mid:"これだけで\n[結論 → 要点3つ]\nの回答に。",small:"毎回お願いしなくてよくなります"},
+    {mid:"保存して、\n今日のうちに[設定]を。",small:"導入支援で最初に教えている設定です"}]},
+  b:{series:"AI導入の現場で教えていること #02",slides:[
+    {big:"日報、\nまだ打ってる?\n[話すだけ]で1分"},
+    {mid:"帰りの電車で\n今日やったことを\n[そのまま話す]。"},
+    {small:"ChatGPTアプリのマイクで話して\n最後に一言",box:"日報の形にまとめて"},
+    {mid:"[業務内容・成果・\n明日の予定]\nに整理された\n日報が完成。"},
+    {mid:"保存して、\n[今日の日報]で試して。",small:"文字を打つのが苦手な人ほど効きます"}]},
+  c:{series:"AI導入の現場で教えていること #03",slides:[
+    {big:"仕事で使うなら\n無料AI 4つ\n[本音で格付け]"},
+    {rank:"1位",mid:"ChatGPT",small:"何をやらせても平均点以上。\n迷ったらまずこれ。"},
+    {rank:"2位",mid:"Gemini",small:"Googleのサービスと相性がいい。\n調べものに強い。"},
+    {rank:"3位",mid:"Claude",small:"長文と文章の質は随一。\nただし無料で使える量は少なめ。"},
+    {rank:"4位",mid:"Copilot",small:"Word・Excelと一緒に\n使う人なら上位になる。"},
+    {mid:"あなたの1位は?\n[コメント]で\n教えてください。"}]},
+  d:{series:"AI導入の現場で教えていること #04",slides:[
+    {big:"分厚い資料、\n読まずに\n[質問するだけ]"},
+    {mid:"NotebookLMに\n[PDFを入れる]。",small:"Googleの無料ツールです"},
+    {small:"聞きたいことを一言",box:"この資料の要点を\n3つ教えて"},
+    {mid:"答えには\n[根拠の箇所]が付く。",small:"すぐ原文を確認できます"},
+    {mid:"保存して、\n[次の資料]で試して。",small:"会議前の読み込みが一気に短くなります"}]},
+  e:{series:"AI導入の現場で教えていること #05",slides:[
+    {big:"Excelの集計、\n関数はいらない。\n[貼って一言]"},
+    {mid:"表をそのまま\n[ChatGPTに貼る]。"},
+    {small:"そして一言",box:"担当者別に合計して、\n多い順に並べて"},
+    {mid:"[集計表]が\n数秒で完成。",small:"※ 数字は元データで必ず確認を"},
+    {mid:"保存して、\n[次の集計]で試して。",small:"関数が苦手な人ほど効きます"}]}
+};
+const [key, n] = (new URLSearchParams(location.search).get("s") || "a-0").split("-");
+const set = S[key], sl = set.slides[+n];
+document.getElementById("series").textContent = set.series;
+let h = "";
+if (sl.rank) h += `<div class="rank">${sl.rank}</div>`;
+if (sl.big) h += `<div class="big">${R(sl.big)}</div>`;
+if (sl.mid) h += `<div class="mid">${R(sl.mid)}</div>`;
+if (sl.small && sl.box) h += `<div class="small">${R(sl.small)}</div><div class="box">${R(sl.box)}</div>`;
+else if (sl.small) h += `<div class="small">${R(sl.small)}</div>`;
+const w=document.getElementById("wrap"); w.innerHTML = h; if (sl.rank) w.classList.add("ranked");
+</script>
+</body>
+</html>
