@@ -25,6 +25,10 @@ API_VERSION = os.getenv("GRAPH_API_VERSION", "v21.0")
 BASE_URL = f"https://graph.instagram.com/{API_VERSION}"
 AUTH_HEADERS = {"Authorization": f"Bearer {ACCESS_TOKEN}"} if ACCESS_TOKEN else {}
 
+# リールはprofile_visits非対応。非対応の指標が1つでもあるとリクエスト全体が失敗する
+IMAGE_METRICS = "reach,saved,shares,profile_visits"
+REEL_METRICS = "reach,saved,shares,views,ig_reels_avg_watch_time"
+
 QUEUE_PATH = os.path.join(os.path.dirname(__file__), "queue", "posts.json")
 
 
@@ -44,12 +48,12 @@ def fetch_basic_fields(media_id: str) -> dict:
     return resp.json()
 
 
-def fetch_media_insights(media_id: str) -> dict:
+def fetch_media_insights(media_id: str, is_reel: bool = False) -> dict:
     """reach/saved等。権限が無い場合は空dictを返す"""
     try:
         resp = requests.get(
             f"{BASE_URL}/{media_id}/insights",
-            params={"metric": "reach,saved,shares,profile_visits"},
+            params={"metric": REEL_METRICS if is_reel else IMAGE_METRICS},
             headers=AUTH_HEADERS,
             timeout=30,
         )
@@ -74,7 +78,7 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"警告: {entry['id']} の取得に失敗しました: {e}", file=sys.stderr)
             continue
-        insights = fetch_media_insights(media_id)
+        insights = fetch_media_insights(media_id, is_reel="video" in entry)
         results.append(
             {
                 "id": entry["id"],
