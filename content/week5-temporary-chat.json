@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #12",
+  "output": "images/week5-temporary-chat.mp4",
+  "scenes": [
+    {"type": "hook", "text": "ChatGPTの履歴、\n[残したくない相談]\nありませんか?", "sub": "ボタン1つで切り替えられます", "sec": 2.0},
+    {"type": "text", "text": "新しいチャットで\n右上の[「一時」]を押す", "sec": 2.0},
+    {"type": "prompt", "text": "一時チャットにすると", "prompt": "履歴に表示されない\nモデルの改善に使われない", "sec": 2.5},
+    {"type": "verdict", "label": "ちょっとした相談は", "stamp": "一時", "good": true, "sub": "安全のため最長30日は保管されます", "sec": 2.5},
+    {"type": "text", "text": "ただし[社外秘]は\n会社のルールが最優先", "sub": "一時チャットでも貼ってOKではありません", "sec": 2.0},
+    {"type": "ab", "text": "使ったことある?", "a": "知ってた", "b": "初めて知った", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}

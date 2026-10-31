@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #11",
+  "output": "images/week5-verdict-delegate.mp4",
+  "scenes": [
+    {"type": "hook", "text": "AIに任せる?\n自分でやる?\n[本音で即判定]", "sub": "最後の1つ、迷う人が多いです", "sec": 2.0},
+    {"type": "verdict", "label": "文章を\n敬語に直す", "stamp": "アリ", "good": true, "sub": "言い回しだけ自分で確認", "sec": 2.5},
+    {"type": "verdict", "label": "長い資料の\n要点出し", "stamp": "アリ", "good": true, "sub": "大事な数字は元資料で確認", "sec": 2.5},
+    {"type": "verdict", "label": "AIの計算を\nそのまま請求書に", "stamp": "ナシ", "good": false, "sub": "計算は必ず電卓かExcelで", "sec": 2.5},
+    {"type": "verdict", "label": "契約書の\n最終判断", "stamp": "ナシ", "good": false, "sub": "読む補助はOK、判断は人と専門家", "sec": 2.5},
+    {"type": "ab", "text": "あなたはどっち?", "a": "もう任せてる", "b": "まだ自分でやる", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}
