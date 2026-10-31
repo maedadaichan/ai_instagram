@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #07",
+  "output": "images/week4_reel_minutes.mp4",
+  "scenes": [
+    {"type": "hook", "text": "議事録、\nもう書かない。\n[スマホで録るだけ]", "sub": "AIへの指示は、たった一言", "sec": 2.0},
+    {"type": "text", "text": "会議を\n[スマホで録音]", "sub": "参加者に一言ことわってから", "sec": 1.5},
+    {"type": "text", "text": "録音を\n[NotebookLM]に入れる", "sub": "Googleの無料ツールです", "sec": 1.5},
+    {"type": "chat", "user": "議事録にして", "ai": ["決定事項:3件", "次の担当者と期限", "持ち越しの議題"], "sec": 3.5},
+    {"type": "text", "text": "最後に[人が確認]して\n完成", "sub": "固有名詞と数字だけ見ればOK", "sec": 1.5},
+    {"type": "ab", "text": "議事録、どっち派?", "a": "自分で書く", "b": "AIに任せる", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}

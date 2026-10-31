@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #08",
+  "output": "images/week4_reel_training_off.mp4",
+  "scenes": [
+    {"type": "hook", "text": "仕事でChatGPT、\n[この設定]\n確認しましたか?", "sub": "導入支援で最初に見る項目です", "sec": 2.0},
+    {"type": "text", "text": "個人向けプランは\n会話が[学習に使われる]\n設定のことがあります", "sec": 2.0},
+    {"type": "prompt", "text": "設定 → データコントロール", "prompt": "すべての人のために\nモデルを改善する", "sec": 2.5},
+    {"type": "verdict", "label": "ここを", "stamp": "オフ", "good": false, "sub": "チャット履歴はそのまま残ります", "sec": 2.5},
+    {"type": "text", "text": "ただし[社外秘]は\n会社のルールが最優先", "sub": "オフでも何でも貼ってOKではありません", "sec": 2.0},
+    {"type": "ab", "text": "確認してみてください", "a": "もうオフだった", "b": "オンのままだった", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}

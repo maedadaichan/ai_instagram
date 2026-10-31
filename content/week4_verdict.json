@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #06",
+  "output": "images/week4_reel_verdict.mp4",
+  "scenes": [
+    {"type": "hook", "text": "仕事のAI活用\nアリ?ナシ?\n[本音で即判定]", "sub": "最後の1つ、やってる人が多いです", "sec": 2.0},
+    {"type": "verdict", "label": "議事録の要約", "stamp": "アリ", "good": true, "sub": "人が最後に確認すれば、大幅に時短", "sec": 2.5},
+    {"type": "verdict", "label": "メールの下書き", "stamp": "アリ", "good": true, "sub": "宛名と数字だけ自分で確認", "sec": 2.5},
+    {"type": "verdict", "label": "最新情報の調査を\nそのままコピペ", "stamp": "ナシ", "good": false, "sub": "古い情報や誤りが混ざります", "sec": 2.5},
+    {"type": "verdict", "label": "社外秘の資料を\nそのまま貼る", "stamp": "ナシ", "good": false, "sub": "先に会社のルールと設定を確認", "sec": 2.5},
+    {"type": "ab", "text": "あなたの職場は\nどっち?", "a": "AIは自由に使える", "b": "使うのは禁止", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}
