@@ -2,15 +2,15 @@
 
 Instagram Graph APIを使った投稿自動化ツールです。
 
-## 現在の運用(2026-11-01時点)
+## 現在の運用(2026-11-03時点)
 
 クラウドルーチン3本で、制作から投稿、分析まで自動で回しています。
 
 | ルーチン | 実行(JST) | 内容 |
 |---|---|---|
-| `ai_instagram_daily_post` | 毎日19:00 | キューの先頭を1件投稿 |
+| `ai_instagram_daily_post` | 毎日12:00と19:00 | キューの先頭を1件投稿(1日2本) |
 | `ai_instagram_analysis` | 火木土21:00 | 反応を分析してレポート作成 |
-| `ai_instagram_content_refill` | 水日21:00 | 残り4件以下なら5本制作してキューに追加 |
+| `ai_instagram_content_refill` | 日月水金21:00 | 残り8件以下なら6本制作してキューに追加 |
 
 - リールは `reel_builder.py` が台本JSON(`content/`)から生成します。Chrome不要で、BGMと効果音も合成します。
 - 制作ルールは [docs/content_playbook.md](docs/content_playbook.md) にまとめています。
