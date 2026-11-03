@@ -137,6 +137,29 @@ def render_pill(text: str, size: int, fill: tuple, text_color: tuple = WHITE, pa
     return image
 
 
+def render_result_card(title: str, lines: list) -> Image.Image:
+    """フックで最初に見せる「完成形」のカード。結果を先に見せて、続きを見る理由を作る"""
+    pad = 44
+    title_font = get_font(38, 700)
+    line_font = get_font(50, 800)
+    max_width = TEXT_WIDTH - pad * 2
+    longest = max(line_font.getlength("・" + line) for line in lines)
+    if longest > max_width:
+        line_font = get_font(int(50 * max_width / longest), 800)
+    step = int(line_font.size * 1.5)
+    w = TEXT_WIDTH - 40
+    h = pad * 2 + 60 + step * len(lines)
+    image = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((0, 0, w - 1, h - 1), radius=28, fill=WHITE + (255,))
+    draw.text((pad, pad - 6), title, font=title_font, fill=(110, 118, 126, 255))
+    y = pad + 60
+    for line in lines:
+        draw.text((pad, y), "・" + line, font=line_font, fill=DARK + (255,))
+        y += step
+    return image
+
+
 class Element:
     """シーン内の1パーツ。appear秒に飛び込むように表示される"""
 
@@ -205,7 +228,14 @@ class Scene:
 
     def build_hook(self, spec: dict) -> None:
         # 最初のフレームから全文を見せる(サムネイルにも使われるため、出現アニメーションを付けない)
-        blocks = [(render_text(spec["text"], 118), -1.0, False)]
+        if spec.get("result"):
+            # 完成形を最初から見せる型。文字を小さくしてカードを入れる
+            blocks = [
+                (render_text(spec["text"], 96), -1.0, False),
+                (render_result_card(spec.get("result_title", "AIが作った結果"), spec["result"]), -1.0, False),
+            ]
+        else:
+            blocks = [(render_text(spec["text"], 118), -1.0, False)]
         if spec.get("sub"):
             blocks.append((render_text(spec["sub"], 50, 700, LIGHT), 0.5, False))
             self.sounds.append((0.5, "pop"))
