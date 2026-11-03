@@ -234,6 +234,14 @@ class Scene:
                 (render_text(spec["text"], 96), -1.0, False),
                 (render_result_card(spec.get("result_title", "AIが作った結果"), spec["result"]), -1.0, False),
             ]
+        elif spec.get("choices"):
+            # クイズの選択肢を最初から見せる型。問題と答えの候補が1フレーム目でそろう
+            a, b = spec["choices"]
+            blocks = [
+                (render_text(spec["text"], 96), -1.0, False),
+                (render_pill("A  " + a, 58, (58, 66, 74)), -1.0, False),
+                (render_pill("B  " + b, 58, (58, 66, 74)), -1.0, False),
+            ]
         else:
             blocks = [(render_text(spec["text"], 118), -1.0, False)]
         if spec.get("sub"):
