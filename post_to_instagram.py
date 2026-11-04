@@ -37,6 +37,18 @@ BASE_URL = f"https://graph.instagram.com/{API_VERSION}"
 AUTH_HEADERS = {"Authorization": f"Bearer {ACCESS_TOKEN}"} if ACCESS_TOKEN else {}
 
 
+def check(resp: requests.Response) -> None:
+    """エラー時は、Instagramが返したエラー内容(原因の説明)も例外に含める"""
+    if resp.ok:
+        return
+    try:
+        error = resp.json().get("error", {})
+        detail = f"code={error.get('code')} subcode={error.get('error_subcode')} message={error.get('message')}"
+    except ValueError:
+        detail = resp.text[:300]
+    raise requests.HTTPError(f"{resp.status_code} {resp.reason}: {detail}", response=resp)
+
+
 def create_media_container(image_url: str, caption: str) -> str:
     """画像投稿用のメディアコンテナを作成し、コンテナIDを返す"""
     resp = requests.post(
@@ -48,7 +60,7 @@ def create_media_container(image_url: str, caption: str) -> str:
         headers=AUTH_HEADERS,
         timeout=30,
     )
-    resp.raise_for_status()
+    check(resp)
     return resp.json()["id"]
 
 
@@ -64,7 +76,7 @@ def create_reel_container(video_url: str, caption: str) -> str:
         headers=AUTH_HEADERS,
         timeout=30,
     )
-    resp.raise_for_status()
+    check(resp)
     return resp.json()["id"]
 
 
@@ -78,7 +90,7 @@ def wait_until_ready(container_id: str, timeout_sec: int = 60) -> None:
             headers=AUTH_HEADERS,
             timeout=30,
         )
-        resp.raise_for_status()
+        check(resp)
         status = resp.json().get("status_code")
         if status == "FINISHED":
             return
@@ -98,7 +110,7 @@ def publish_media(container_id: str) -> str:
         headers=AUTH_HEADERS,
         timeout=30,
     )
-    resp.raise_for_status()
+    check(resp)
     return resp.json()["id"]
 
 
