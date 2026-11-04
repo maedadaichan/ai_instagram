@@ -1,0 +1,14 @@
+{
+  "series": "AI導入の現場で教えていること #17",
+  "output": "images/week6-notebooklm-audio.mp4",
+  "scenes": [
+    {"type": "hook", "text": "読む時間がない資料、\n[耳で聞けば]いい", "sub": "移動中に聞けます", "sec": 2.5,
+     "result_title": "PDFを入れる → 音声解説",
+     "result": ["▶ 日本語の会話形式で要点を解説", "▶ 通勤中・移動中に聞ける"]},
+    {"type": "text", "text": "NotebookLMに\n[資料を追加]", "sub": "Googleの無料ツール", "sec": 1.5},
+    {"type": "prompt", "text": "Studioパネルで押すのは", "prompt": "音声解説", "sec": 2.0},
+    {"type": "text", "text": "数分待てば\n[聞くだけ]", "sub": "生成中もほかの作業ができます", "sec": 2.0},
+    {"type": "text", "text": "大事な数字は\n[元の資料で確認]", "sub": "AIの音声は間違えることがあります", "sec": 2.0},
+    {"type": "ab", "text": "資料、どっち派?", "a": "目で読む", "b": "耳で聞く", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}

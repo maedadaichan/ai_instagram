@@ -1,0 +1,14 @@
+{
+  "series": "AI導入の現場で教えていること #16",
+  "output": "images/week6-verdict-writing.mp4",
+  "scenes": [
+    {"type": "hook", "text": "その文章、AIに書かせる?\n[本音で即判定]", "sub": "最後の1つ、意外と迷います", "sec": 2.5,
+     "result_title": "今日判定するのはこの4つ",
+     "result": ["社内チャットの言い回し", "研修資料のたたき台", "お詫び状をそのまま送る", "人事評価のコメント"]},
+    {"type": "verdict", "label": "社内チャットの\n言い回し", "stamp": "アリ", "good": true, "sub": "角が立たない表現に直すのは得意", "sec": 2.5},
+    {"type": "verdict", "label": "研修資料の\nたたき台", "stamp": "アリ", "good": true, "sub": "中身は現場を知る人が仕上げる", "sec": 2.5},
+    {"type": "verdict", "label": "お詫び状を\nそのまま送る", "stamp": "ナシ", "good": false, "sub": "経緯と対応は自分の言葉で確認", "sec": 2.5},
+    {"type": "verdict", "label": "人事評価の\nコメント", "stamp": "ナシ", "good": false, "sub": "個人情報と、本人を見た判断が要る", "sec": 2.5},
+    {"type": "ab", "text": "あなたはどっち?", "a": "下書きは任せる", "b": "全部自分で書く", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}

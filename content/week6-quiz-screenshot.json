@@ -1,0 +1,12 @@
+{
+  "series": "AI導入の現場で教えていること #19",
+  "output": "images/week6-quiz-screenshot.mp4",
+  "scenes": [
+    {"type": "hook", "text": "スクショをAIに送る前、\n[消すべきはどっち?]", "sub": "3秒で考えてみてください", "sec": 3.0,
+     "choices": ["画面の右上の時刻", "お客様の名前"]},
+    {"type": "verdict", "label": "消すべきは", "stamp": "B", "good": false, "sub": "個人情報はAIに送らないのが基本", "sec": 2.5},
+    {"type": "text", "text": "送る前に\n[画面全体を見直す]", "sub": "メールアドレスや電話番号も", "sec": 2.0},
+    {"type": "text", "text": "スマホの編集で\n[塗りつぶして]から送る", "sub": "写真アプリの編集機能でOK", "sec": 2.0},
+    {"type": "ab", "text": "送る前、確認してる?", "a": "毎回見直す", "b": "そのまま送ってた", "sub": "コメントで「A」か「B」だけでOK", "sec": 3.0}
+  ]
+}
