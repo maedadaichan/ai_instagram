@@ -9,7 +9,7 @@ Instagram Graph APIを使った投稿自動化ツールです。
 | ルーチン | 実行(JST) | 内容 |
 |---|---|---|
 | `ai_instagram_daily_post` | 毎日12:00と19:00 | キューの先頭を1件投稿(1日2本) |
-| `ai_instagram_analysis` | 火木土21:00 | 反応を分析してレポート作成 |
+| `ai_instagram_analysis` | 月木20:00 | 投稿状況と反応を分析し、改善案3件つきでレポート作成・通知 |
 | `ai_instagram_content_refill` | 日月水金21:00 | 残り8件以下なら6本制作してキューに追加 |
 
 - リールは `reel_builder.py` が台本JSON(`content/`)から生成します。Chrome不要で、BGMと効果音も合成します。
@@ -97,7 +97,7 @@ python make_reel.py --images images/slide1.png images/slide2.png images/slide3.p
 
 作成した動画をGitHubにpushし、`queue/posts.json` のエントリで `image` の代わりに `video` キー(例: `"video": "images/week2_reel.mp4"`)を使えば、`post_next.py` が自動的にリールとして投稿します。
 
-## 6. 反応データの分析(週2〜3回)
+## 6. 反応データの分析(週2回)
 
 `fetch_insights.py` は投稿済み(`posted: true`)のエントリについて、いいね数・コメント数(取得できればリーチ・保存数)をInstagram Graph APIから取得しJSONで出力します。
 
@@ -105,4 +105,4 @@ python make_reel.py --images images/slide1.png images/slide2.png images/slide3.p
 python fetch_insights.py
 ```
 
-このデータをもとに、週2〜3回のクラウドルーチン(`ai_instagram_analysis`)が `reports/` 配下に分析レポート(良かった投稿・伸びなかった投稿・次に試すべき改善案)を作成し、mainにコミットします。レポートはGitHub上、またはこの会話で「今週のレポート見せて」と聞けば確認できます。
+このデータをもとに、週2回(月・木20:00)のクラウドルーチン(`ai_instagram_analysis`)が `reports/` 配下に分析レポート(良かった投稿・伸びなかった投稿・次に試すべき改善案3件)を作成し、mainにコミットします。要約はClaudeアプリの通知とメールで届きます。レポートはGitHub上、またはこの会話で「今週のレポート見せて」と聞けば確認できます。
