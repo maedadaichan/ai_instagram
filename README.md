@@ -8,9 +8,9 @@ Instagram Graph APIを使った投稿自動化ツールです。
 
 | ルーチン | 実行(JST) | 内容 |
 |---|---|---|
-| `ai_instagram_daily_post` | 毎日12:00と19:00 | キューの先頭を1件投稿(1日2本) |
+| `ai_instagram_daily_post` | 毎日8:00・12:00・19:00 | キューの先頭を1件投稿(1日3本) |
 | `ai_instagram_analysis` | 月木20:00 | 投稿状況と反応を分析し、改善案3件つきでレポート作成・通知 |
-| `ai_instagram_content_refill` | 日月水金21:00 | 残り8件以下なら6本制作してキューに追加 |
+| `ai_instagram_content_refill` | 毎日21:00 | 残り9件以下なら6本制作してキューに追加 |
 
 - リールは `reel_builder.py` が台本JSON(`content/`)から生成します。Chrome不要で、BGMと効果音も合成します。
 - 制作ルールは [docs/content_playbook.md](docs/content_playbook.md) にまとめています。
