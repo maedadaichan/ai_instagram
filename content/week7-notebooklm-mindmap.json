@@ -1,0 +1,13 @@
+{
+  "series": "AI導入の現場で教えていること #27",
+  "output": "images/week7-notebooklm-mindmap.mp4",
+  "scenes": [
+    {"type": "hook", "text": "長い資料の全体像、\n[図で見たくない?]", "sub": "資料を入れて押すだけ", "sec": 2.5,
+     "result_title": "NotebookLMの「マインドマップ」",
+     "result": ["資料の要点を枝分かれの図に", "気になる所を押すと質問できる"]},
+    {"type": "text", "text": "NotebookLMに\n[資料を追加]", "sub": "PDFやGoogleドキュメントなど", "sec": 2.0},
+    {"type": "prompt", "text": "押すのはここ", "prompt": "Studio →「マインドマップ」", "sec": 2.0},
+    {"type": "text", "text": "大事な数字は\n[元の資料で確認]", "sub": "社外秘の資料は入れない", "sec": 2.0},
+    {"type": "ab", "text": "長い資料、どう読む?", "a": "頭から全部読む", "b": "要点から読む", "sub": "コメントに👍か🔥だけでOK", "sec": 2.5}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "series": "AI導入の現場で教えていること #24",
+  "output": "images/week7-verdict-newcomer.mp4",
+  "scenes": [
+    {"type": "hook", "text": "新人がAIに聞くなら\n[アリ?ナシ?]", "sub": "最後の1つ、意外と多いです", "sec": 2.5,
+     "result_title": "今日判定するのはこの3つ",
+     "result": ["メールの敬語チェック", "知らない用語の意味", "社内の手続きの方法"]},
+    {"type": "verdict", "label": "メールの\n敬語チェック", "stamp": "アリ", "good": true, "sub": "送る前に自分で読み直す", "sec": 2.0},
+    {"type": "verdict", "label": "知らない\n用語の意味", "stamp": "アリ", "good": true, "sub": "社内の略語は先輩に確認", "sec": 2.0},
+    {"type": "verdict", "label": "社内の\n手続きの方法", "stamp": "ナシ", "good": false, "sub": "会社のルールはAIは知りません", "sec": 2.0},
+    {"type": "ab", "text": "新人のころ、どうしてた?", "a": "先輩に聞く派", "b": "まず調べる派", "sub": "コメントに👍か🔥だけでOK", "sec": 2.5}
+  ]
+}

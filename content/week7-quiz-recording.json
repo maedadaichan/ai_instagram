@@ -1,0 +1,11 @@
+{
+  "series": "AI導入の現場で教えていること #23",
+  "output": "images/week7-quiz-recording.mp4",
+  "scenes": [
+    {"type": "hook", "text": "会議を録音してAIへ。\n[先に必要なのは?]", "sub": "3秒で考えてみてください", "sec": 3.0,
+     "choices": ["高性能なマイク", "参加者への一言"]},
+    {"type": "verdict", "label": "先に必要なのは", "stamp": "B", "good": true, "sub": "「AIで議事録にします」と伝える", "sec": 2.5},
+    {"type": "text", "text": "社外の人がいる会議は\n[特に注意]", "sub": "社内ルールも確認", "sec": 2.0},
+    {"type": "ab", "text": "録音の前、伝えてる?", "a": "毎回伝えてる", "b": "伝えてなかった", "sub": "コメントに👍か🔥だけでOK", "sec": 2.5}
+  ]
+}

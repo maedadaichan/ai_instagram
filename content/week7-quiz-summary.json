@@ -1,0 +1,11 @@
+{
+  "series": "AI導入の現場で教えていること #26",
+  "output": "images/week7-quiz-summary.mp4",
+  "scenes": [
+    {"type": "hook", "text": "AIに要約させるなら\n[正確なのはどっち?]", "sub": "3秒で考えてみてください", "sec": 3.0,
+     "choices": ["タイトルだけ伝える", "本文を貼り付ける"]},
+    {"type": "verdict", "label": "正確なのは", "stamp": "B", "good": true, "sub": "タイトルだけだと内容を推測で書くことも", "sec": 2.5},
+    {"type": "prompt", "text": "頼み方は一言でOK", "prompt": "この文章を3行で要約して", "sec": 2.0},
+    {"type": "ab", "text": "要約を頼むとき、どっち?", "a": "本文を貼ってた", "b": "タイトルだけだった", "sub": "コメントに👍か🔥だけでOK", "sec": 2.5}
+  ]
+}
