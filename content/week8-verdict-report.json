@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #28",
+  "output": "images/week8-verdict-report.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "上司への報告、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは自分の言葉で",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "メモを報告文に整える",
+        "結論から順に並べ替え",
+        "ミスの謝罪文を丸ごと"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "メモを\n報告文に整える",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "事実が合っているか確認",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "結論から\n順に並べ替え",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "読む人が早く分かる",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "ミスの謝罪文\nを丸ごと",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "経緯は自分しか知らない",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "報告を書くとき、どっち?",
+      "a": "結論から書く",
+      "b": "経緯から書く",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

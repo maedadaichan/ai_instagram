@@ -1,0 +1,38 @@
+{
+  "series": "AI導入の現場で教えていること #30",
+  "output": "images/week8-quiz-citation.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "NotebookLMの答え、\n[根拠の確かめ方は?]",
+      "sub": "3秒で考えてみてください",
+      "sec": 3.0,
+      "choices": [
+        "もう一度聞く",
+        "回答の数字を押す"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "正解は",
+      "stamp": "B",
+      "good": true,
+      "sub": "資料の元の文章に飛べます",
+      "sec": 2.5
+    },
+    {
+      "type": "text",
+      "text": "聞き直しても\n[根拠は分からない]",
+      "sub": "元の文章で確かめる",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "AIの答えの根拠、見てる?",
+      "a": "毎回見てる",
+      "b": "見てなかった",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}
