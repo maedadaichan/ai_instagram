@@ -1,0 +1,47 @@
+{
+  "series": "AI導入の現場で教えていること #35",
+  "output": "images/week9-youtube-notebook.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "長い解説動画、\n[全部見なくていい]",
+      "sub": "Gemini Notebook × YouTube",
+      "sec": 2.5,
+      "result_title": "動画のURLを追加 → 質問",
+      "result": [
+        "この動画の要点は3つです",
+        "① ……",
+        "② ……"
+      ]
+    },
+    {
+      "type": "prompt",
+      "text": "ソースに\n[URLを貼るだけ]",
+      "prompt": "ソースを追加 → YouTube → URL",
+      "sec": 2.0
+    },
+    {
+      "type": "chat",
+      "user": "この動画の要点を3つ",
+      "ai": [
+        "要点は3つです",
+        "① ……"
+      ],
+      "sec": 2.5
+    },
+    {
+      "type": "text",
+      "text": "字幕のある\n[公開動画だけ]",
+      "sub": "大事な所は動画で確認",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "長い動画、どう見てる?",
+      "a": "倍速で全部見る",
+      "b": "要点だけ知りたい",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

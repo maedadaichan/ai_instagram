@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #39",
+  "output": "images/week9-verdict-customer.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "お客様対応、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは人が決める",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "問い合わせ返信の下書き",
+        "よくある質問の整理",
+        "返金の可否をそのまま回答"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "問い合わせ\n返信の下書き",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "送る前に自分で読み直す",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "よくある\n質問の整理",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "回答の中身は社内で確認",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "返金の可否を\nそのまま回答",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "会社のルールで人が判断",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "お客様への返信、どっち?",
+      "a": "一から自分で書く",
+      "b": "下書きは任せたい",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

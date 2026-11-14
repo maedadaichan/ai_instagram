@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #34",
+  "output": "images/week9-verdict-excel.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "Excel作業、\n[AIに頼んでいい?]",
+      "sub": "最後の1つ、やりがちです",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "関数を作ってもらう",
+        "エラーの意味を聞く",
+        "顧客名簿を丸ごと貼る"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "関数を\n作ってもらう",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "自分の表で結果を確認",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "エラーの\n意味を聞く",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "表示された文字をそのまま伝える",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "顧客名簿を\n丸ごと貼る",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "個人情報は入れない",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "Excel、どっち派?",
+      "a": "関数は自分で書く",
+      "b": "AIに聞いてる",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}
