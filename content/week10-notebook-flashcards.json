@@ -1,0 +1,43 @@
+{
+  "series": "AI導入の現場で教えていること #43",
+  "output": "images/week10-notebook-flashcards.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "新人研修のマニュアル、\n[覚えるのが大変?]",
+      "sub": "資料を入れて押すだけ",
+      "sec": 2.5,
+      "result_title": "「フラッシュカード」を押すと",
+      "result": [
+        "表:経費精算の締め日は?",
+        "裏:答えと資料の該当箇所"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Gemini Notebookに\n[マニュアルを追加]",
+      "sub": "旧NotebookLMです",
+      "sec": 2.0
+    },
+    {
+      "type": "prompt",
+      "text": "押すのはここ",
+      "prompt": "Studio →「フラッシュカード」",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "「クイズ」なら\n[選択式で確認]",
+      "sub": "答えは必ずマニュアルで確認",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "マニュアル、どう覚えた?",
+      "a": "読んで覚えた",
+      "b": "問題を解いて覚えた",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

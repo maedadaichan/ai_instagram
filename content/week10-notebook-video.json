@@ -1,0 +1,43 @@
+{
+  "series": "AI導入の現場で教えていること #40",
+  "output": "images/week10-notebook-video.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "研修資料、\n[動画にしたくない?]",
+      "sub": "資料を入れて押すだけ",
+      "sec": 2.5,
+      "result_title": "Gemini Notebookの「動画解説」",
+      "result": [
+        "資料からスライド付きの動画",
+        "ナレーションも自動で付く"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Gemini Notebookに\n[資料を追加]",
+      "sub": "旧NotebookLMです",
+      "sec": 2.0
+    },
+    {
+      "type": "prompt",
+      "text": "押すのはここ",
+      "prompt": "Studio →「動画解説」",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "できた動画は\n[必ず中身を確認]",
+      "sub": "AIが間違えることもある",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "資料の説明、どっち派?",
+      "a": "資料を読んでほしい",
+      "b": "動画で見たい",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

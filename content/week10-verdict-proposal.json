@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #42",
+  "output": "images/week10-verdict-proposal.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "企画書づくり、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは自分で確かめる",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "アイデアの案出し",
+        "企画書の構成案",
+        "市場の数字をそのまま引用"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "アイデアの\n案出し",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "選ぶのは自分",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "企画書の\n構成案",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "中身は自分の言葉で",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "市場の数字を\nそのまま引用",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "出典を自分で確認する",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "企画書、どこから始める?",
+      "a": "白紙から自分で",
+      "b": "AIと案出しから",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}
