@@ -1,0 +1,43 @@
+{
+  "series": "AI導入の現場で教えていること #46",
+  "output": "images/week11-notebook-infographic.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "資料の要点、\n[1枚の図にしたくない?]",
+      "sub": "資料を入れて押すだけ",
+      "sec": 2.5,
+      "result_title": "「インフォグラフィック」を押すと",
+      "result": [
+        "資料の要点を1枚の図に",
+        "画像(PNG)で保存できる"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Gemini Notebookに\n[資料を追加]",
+      "sub": "旧NotebookLMです",
+      "sec": 2.0
+    },
+    {
+      "type": "prompt",
+      "text": "押すのはここ",
+      "prompt": "Studio →「インフォグラフィック」",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "できた図は\n[数字を必ず確認]",
+      "sub": "AIが間違えることもある",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "資料の共有、どっち派?",
+      "a": "文章で送る",
+      "b": "図にして送る",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

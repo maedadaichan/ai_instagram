@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #48",
+  "output": "images/week11-verdict-research.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "調べもの、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは公式で確かめる",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "知らない用語の意味",
+        "調べる観点の洗い出し",
+        "法律や制度をそのまま使う"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "知らない用語の\n意味",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "入口として使う",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "調べる観点の\n洗い出し",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "抜けを減らせる",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "法律や制度を\nそのまま使う",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "古い情報のことがある",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "調べもの、最初はどっち?",
+      "a": "検索から",
+      "b": "AIに聞いてから",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}

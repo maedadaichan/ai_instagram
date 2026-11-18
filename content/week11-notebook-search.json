@@ -1,0 +1,43 @@
+{
+  "series": "AI導入の現場で教えていること #50",
+  "output": "images/week11-notebook-search.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "調べる資料、\n[1つずつ探してない?]",
+      "sub": "キーワードを入れるだけ",
+      "sec": 2.5,
+      "result_title": "ソースの検索を使うと",
+      "result": [
+        "関連するWebページが一覧に",
+        "選んでノートブックに追加"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Gemini Notebookの\n[ソースパネル]",
+      "sub": "旧NotebookLMです",
+      "sec": 2.0
+    },
+    {
+      "type": "prompt",
+      "text": "入れるのはここ",
+      "prompt": "検索ボックス → 調べたいキーワード",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "追加する前に\n[出どころを確認]",
+      "sub": "公式の情報を選ぶ",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "資料集め、どっち派?",
+      "a": "自分で検索",
+      "b": "AIに探してもらう",
+      "sub": "コメントに👍か🔥だけでOK",
+      "sec": 2.5
+    }
+  ]
+}
