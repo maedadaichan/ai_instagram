@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #53",
+  "output": "images/week12-verdict-presen.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "プレゼン準備、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは入れる前に止まる",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "想定される質問の洗い出し",
+        "話す原稿のたたき台",
+        "社外秘の資料をそのまま入れる"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "想定される\n質問の洗い出し",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "答えは自分で用意",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "話す原稿の\nたたき台",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "自分の言葉に直す",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "社外秘の資料を\nそのまま入れる",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "社内ルールを先に確認",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "プレゼン準備、どこから?",
+      "a": "資料づくりから",
+      "b": "想定質問から",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}
