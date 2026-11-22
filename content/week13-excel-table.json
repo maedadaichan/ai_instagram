@@ -1,0 +1,46 @@
+{
+  "series": "AI導入の現場で教えていること #63",
+  "output": "images/week13-excel-table.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "AIが作った表、\n[貼って終わってない?]",
+      "sub": "AI × Excelの組み合わせ",
+      "sec": 2.5,
+      "result_title": "Ctrl+Tを押すと",
+      "result": [
+        "見出しに絞り込みボタン",
+        "並べ替えもすぐできる"
+      ]
+    },
+    {
+      "type": "chat",
+      "user": "このメモを表にして",
+      "ai": [
+        "表にしました",
+        "日付|担当|内容"
+      ],
+      "sec": 2.0
+    },
+    {
+      "type": "prompt",
+      "text": "Excelに貼ったら",
+      "prompt": "表を選んで Ctrl + T",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "見出しのボタンで\n[絞り込むだけ]",
+      "sub": "ホーム →「テーブルとして書式設定」でも",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "Excelの表、どうしてる?",
+      "a": "そのまま使う",
+      "b": "テーブルにする",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}

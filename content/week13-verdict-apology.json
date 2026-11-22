@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #59",
+  "output": "images/week13-verdict-apology.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "お詫びメール、\n[AIに頼んでいい?]",
+      "sub": "最後の1つで信用を落とす",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "言葉づかいを整える",
+        "経緯のメモを文章にする",
+        "原因をAIに考えてもらう"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "言葉づかいを\n整える",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "送る前に読み返す",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "経緯のメモを\n文章にする",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "日付と事実は自分で確認",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "原因を\nAIに考えてもらう",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "確かめた事実だけ書く",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "お詫びメール、どう書く?",
+      "a": "一から自分で",
+      "b": "AIで下書き",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}
