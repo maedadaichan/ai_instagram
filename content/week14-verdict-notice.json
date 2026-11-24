@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #64",
+  "output": "images/week14-verdict-notice.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "社内のお知らせ文、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは要注意",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "長い文を短くする",
+        "要点を箇条書きにする",
+        "規程の中身を書かせる"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "長い文を\n短くする",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "送る前に読み返す",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "要点を\n箇条書きにする",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "日時と場所は自分で確認",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "規程の中身を\nAIに書かせる",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "原文を確認して自分で書く",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "社内のお知らせ、どう書く?",
+      "a": "一から自分で",
+      "b": "AIで下書き",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}

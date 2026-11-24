@@ -1,0 +1,43 @@
+{
+  "series": "AI導入の現場で教えていること #65",
+  "output": "images/week14-notebook-slides.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "会議のスライド、\n[白紙から作ってない?]",
+      "sub": "AI × PowerPointの組み合わせ",
+      "sec": 2.5,
+      "result_title": "「スライド資料」を押すと",
+      "result": [
+        "資料からスライドができる",
+        "PowerPointで保存できる"
+      ]
+    },
+    {
+      "type": "prompt",
+      "text": "押すのはここ",
+      "prompt": "Studio → スライド資料",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "できたら\n[PowerPointで保存]",
+      "sub": "「…」→ .pptxでダウンロード",
+      "sec": 2.0
+    },
+    {
+      "type": "text",
+      "text": "数字は\n[元の資料と見比べる]",
+      "sub": "表示名は画面によって違います",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "会議のスライド、どう作る?",
+      "a": "白紙から自分で",
+      "b": "資料からAIで",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}
