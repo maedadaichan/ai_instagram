@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #71",
+  "output": "images/week15-verdict-manual.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "業務マニュアル作り、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは要注意",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "手順の文を整える",
+        "用語をそろえる",
+        "操作せず手順を書かせる"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "手順の文を\n整える",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "自分のメモを渡して整える",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "用語を\nそろえる",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "社内の呼び方は自分で決める",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "操作せずに\n手順を書かせる",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "実際の画面で確かめる",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "マニュアル、どう作ってる?",
+      "a": "一から自分で",
+      "b": "AIで整える",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}
