@@ -1,0 +1,50 @@
+{
+  "series": "AI導入の現場で教えていること #77",
+  "output": "images/week16-verdict-survey.mp4",
+  "scenes": [
+    {
+      "type": "hook",
+      "text": "アンケートのまとめ、\n[AIに頼んでいい?]",
+      "sub": "最後の1つは要注意",
+      "sec": 2.5,
+      "result_title": "今日判定するのはこの3つ",
+      "result": [
+        "自由記述を分類する",
+        "多い意見を要約する",
+        "名前入りのまま貼る"
+      ]
+    },
+    {
+      "type": "verdict",
+      "label": "自由記述を\n分類する",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "分け方は自分で決めておく",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "多い意見を\n要約する",
+      "stamp": "アリ",
+      "good": true,
+      "sub": "件数は元の表で数え直す",
+      "sec": 2.0
+    },
+    {
+      "type": "verdict",
+      "label": "名前入りのまま\n貼る",
+      "stamp": "ナシ",
+      "good": false,
+      "sub": "名前や連絡先は消してから",
+      "sec": 2.0
+    },
+    {
+      "type": "ab",
+      "text": "アンケートのまとめ、どうしてる?",
+      "a": "全部手で読む",
+      "b": "AIで分類する",
+      "sub": "コメントに絵文字1つでOK",
+      "sec": 2.5
+    }
+  ]
+}
